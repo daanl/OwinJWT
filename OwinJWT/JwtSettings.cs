@@ -1,6 +1,6 @@
 using System.Security.Cryptography;
 
-namespace WebApplication1
+namespace OwinJWT
 {
     /// <summary>
     /// These setting should be retrieved from config file

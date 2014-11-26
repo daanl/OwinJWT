@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens;
 using System.Security.Claims;
 
-namespace WebApplication1
+namespace OwinJWT
 {
     public static class JwtTokenHelper
     {

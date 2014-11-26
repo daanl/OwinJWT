@@ -6,11 +6,11 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Jwt;
 using Newtonsoft.Json;
 using Owin;
-using WebApplication1;
+using OwinJWT;
 
 [assembly: OwinStartup(typeof(Startup))]
 
-namespace WebApplication1
+namespace OwinJWT
 {
     public class Startup
     {
@@ -35,7 +35,7 @@ namespace WebApplication1
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.NameIdentifier, Guid.NewGuid().ToString()),
-                    new Claim(ClaimTypes.Name, "yourmother")
+                    new Claim(ClaimTypes.Name, "SomeUser")
                 };
 
                 await context.Response.WriteAsync(JsonConvert.SerializeObject(new
@@ -48,7 +48,7 @@ namespace WebApplication1
             {
                 var user = context.Authentication.User;
 
-                context.Response.Headers["Content-Type"] = "application/text";
+                context.Response.Headers["Content-Type"] = "text/html";
 
                 if (user.Identity.IsAuthenticated)
                 {
