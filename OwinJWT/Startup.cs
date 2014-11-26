@@ -16,9 +16,6 @@ namespace OwinJWT
     {
         public void Configuration(IAppBuilder app)
         {
-            var keyForHmacSha256 = new byte[64];
-            new RNGCryptoServiceProvider().GetNonZeroBytes(keyForHmacSha256);  
-
             app.UseJwtBearerAuthentication(new JwtBearerAuthenticationOptions
             {
                 AllowedAudiences = new[] { JwtSettings.Audience },
