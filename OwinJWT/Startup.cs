@@ -37,7 +37,7 @@ namespace OwinJWT
 
                 await context.Response.WriteAsync(JsonConvert.SerializeObject(new
                 {
-                    AccessToken = JwtTokenHelper.GetToken(claims)
+                    JsonWebToken = JwtTokenHelper.GetToken(claims)
                 }));
             }));
 
@@ -53,7 +53,7 @@ namespace OwinJWT
                 }
                 else
                 {
-                    await context.Response.WriteAsync("Not authenticated");
+                    await context.Response.WriteAsync("Not Authenticated");
                 }
             });
         }
